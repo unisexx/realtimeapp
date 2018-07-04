@@ -20,3 +20,5 @@ use App\Http\Controllers\QuestionController;
 // });
 
 Route::apiResource('/question','QuestionController');
+
+Route::apiResource('/category','CategoryController');
