@@ -1,7 +1,5 @@
 <?php
 
-use App\Http\Controllers\QuestionController;
-
 // use Illuminate\Http\Request;
 
 // /*
@@ -19,6 +17,8 @@ use App\Http\Controllers\QuestionController;
 //     return $request->user();
 // });
 
-Route::apiResource('/question','QuestionController');
+Route::apiResource('/question', 'QuestionController');
 
-Route::apiResource('/category','CategoryController');
+Route::apiResource('/category', 'CategoryController');
+
+Route::apiResource('/question/{question}/reply', 'ReplyController');
