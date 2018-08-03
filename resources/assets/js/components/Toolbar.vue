@@ -7,7 +7,9 @@
             <v-btn flat>Forum</v-btn>
             <v-btn flat>Ask Question</v-btn>
             <v-btn flat>Category</v-btn>
-            <v-btn flat>Login</v-btn>
+            <router-link to="/login">
+                <v-btn flat>Login</v-btn>
+            </router-link>
         </v-toolbar-items>
     </v-toolbar>
 </template>
