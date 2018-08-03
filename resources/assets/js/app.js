@@ -1,4 +1,3 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -10,7 +9,7 @@ require('./bootstrap');
 window.Vue = require('vue');
 import Vue from 'vue'
 import Vuetify from 'vuetify'
- 
+
 Vue.use(Vuetify)
 
 /**
@@ -20,7 +19,9 @@ Vue.use(Vuetify)
  */
 
 Vue.component('AppHome', require('./components/AppHome.vue'));
+import router from './Router/router.js'
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    router
 });
