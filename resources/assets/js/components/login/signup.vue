@@ -32,14 +32,17 @@ export default {
         password_confirmation: null
       },
       errors: {}
-    };
+    }
   },
   methods: {
     signup() {
       axios
-        .post("api/auth/signup", this.form)
-        .then(res => User.resposeAfterLogin(res))
-        .catch(error => (this.errors = error.response.data.errors));
+        .post("/api/auth/signup", this.form)
+        .then(res => {
+            User.responseAfterLogin(res)
+            this.$router.push({name:'forum'})
+          })
+        .catch(error => this.errors = error.response.data.errors)
     }
   }
 };

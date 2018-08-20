@@ -6,15 +6,12 @@ Vue.use(VueRouter)
 
 import Login from '../components/login/Login'
 import Signup from '../components/login/signup'
+import Forum from '../components/forum/Forum'
 
-const routes = [{
-        path: '/login',
-        component: Login
-    },
-    {
-        path: '/signup',
-        component: Signup
-    }
+const routes = [
+    { path: '/login',component: Login },
+    { path: '/signup',component: Signup },
+    { path: '/forum',component: Forum, name:'forum' }
 ]
 
 
