@@ -3,15 +3,6 @@
         <v-form @submit.prevent="create">
             <v-text-field v-model="form.title" label="Title" type="text" required></v-text-field>
 
-            <!-- <v-select
-            :items="categories"
-            item-text="name"
-            item-value="id"
-            v-model="form.category_id"
-            label="Category"
-            autocomplete
-            ></v-select> -->
-
             <v-autocomplete
                 :items="categories"
                 item-text="name"
@@ -19,6 +10,8 @@
                 v-model="form.category_id"
                 label="Category"
             ></v-autocomplete>
+
+            <markdown-editor v-model="form.body"></markdown-editor>
 
             <v-btn color="green" type="submit">Create</v-btn>
         </v-form>
@@ -32,8 +25,10 @@ export default {
             form:{
                 title:null,
                 category_id:null,
+                body:null,
             },
-            categories:{}
+            categories:{},
+            errors:{}
         }
     },
     created(){
@@ -42,7 +37,9 @@ export default {
     },
     methods:{
         create(){
-
+            axios.post('/api/question',this.form)
+            .then(res=>console.log(res.data))
+            .catch(error=>this.errors = error.response.data.error)
         }
     }
 }
